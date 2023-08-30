@@ -10,6 +10,11 @@ import java.util.concurrent.TimeUnit;
 public class LoginFuctionalility {
 
     public static void main(String[] args) {
+
+        login();
+    }
+
+    public static void login(){
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\user\\Downloads\\Compressed\\chromedriver-win32\\chromedriver.exe");
         WebDriver driver=new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
@@ -20,6 +25,6 @@ public class LoginFuctionalility {
         driver.findElement(By.name("username")).sendKeys("Admin");
         driver.findElement(By.name("password")).sendKeys("admin123");
         driver.findElement(By.xpath("//button[@type='submit']")).click();
-
+        driver.close();
     }
 }
